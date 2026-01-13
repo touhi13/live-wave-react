@@ -14,7 +14,7 @@ export function useEventBatch<T = unknown>(
   const { debounce = 100, maxBatchSize = 100 } = options;
   const [events, setEvents] = useState<T[]>([]);
   const batchRef = useRef<T[]>([]);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const flush = useCallback(() => {
     if (batchRef.current.length > 0) {

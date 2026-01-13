@@ -1,0 +1,26 @@
+# Source files (dist is published)
+src/
+
+# Config files
+tsconfig.json
+.eslintrc*
+.prettierrc*
+vitest.config.*
+
+# Development
+.github/
+.gitignore
+.gitattributes
+
+# Tests
+__tests__/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+coverage/
+
+# Misc
+*.log
+.DS_Store
+Thumbs.db

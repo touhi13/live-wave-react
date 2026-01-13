@@ -24,4 +24,5 @@ export type {
   NotificationOptions,
   PresenceMember,
   PresenceChannelState,
+  EchoInstance,
 } from './types';

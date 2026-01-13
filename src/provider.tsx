@@ -1,7 +1,7 @@
 import React, { createContext, useCallback, useEffect, useState, useMemo } from 'react';
 import Echo from 'laravel-echo';
 import Pusher from 'pusher-js';
-import type { LiveWaveConfig, LiveWaveContextValue, ConnectionState } from './types';
+import type { LiveWaveConfig, LiveWaveContextValue, ConnectionState, EchoInstance } from './types';
 
 // Make Pusher available globally for Laravel Echo
 if (typeof window !== 'undefined') {
@@ -26,7 +26,7 @@ export function LiveWaveProvider({
   enableLogging = false,
   forceTLS = true,
 }: LiveWaveProviderProps) {
-  const [echo, setEcho] = useState<Echo | null>(null);
+  const [echo, setEcho] = useState<EchoInstance | null>(null);
   const [connectionState, setConnectionState] = useState<ConnectionState>('disconnected');
 
   const config: LiveWaveConfig = useMemo(() => ({

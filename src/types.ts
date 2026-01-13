@@ -1,5 +1,8 @@
-import type Echo from 'laravel-echo';
 import type { Channel, PresenceChannel } from 'laravel-echo';
+
+// Use InstanceType to handle generic Echo class
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type EchoInstance = any;
 
 export interface LiveWaveConfig {
   apiKey: string;
@@ -21,7 +24,7 @@ export type ConnectionState =
   | 'failed';
 
 export interface LiveWaveContextValue {
-  echo: Echo | null;
+  echo: EchoInstance | null;
   isConnected: boolean;
   connectionState: ConnectionState;
   connect: () => void;
@@ -62,4 +65,4 @@ export interface PresenceChannelState<T = Record<string, unknown>> {
   unsubscribe: () => void;
 }
 
-export type { Channel, PresenceChannel, Echo };
+export type { Channel, PresenceChannel, EchoInstance as Echo };

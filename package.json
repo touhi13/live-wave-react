@@ -7,13 +7,16 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
@@ -29,10 +32,28 @@
     "websocket",
     "notifications",
     "broadcasting",
-    "hooks"
+    "hooks",
+    "laravel",
+    "reverb",
+    "pusher",
+    "echo"
   ],
-  "author": "LiveWave Team",
+  "author": {
+    "name": "LiveWave Team",
+    "email": "support@livewave.app"
+  },
   "license": "MIT",
+  "homepage": "https://github.com/touhi13/live-wave-react#readme",
+  "bugs": {
+    "url": "https://github.com/touhi13/live-wave-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/touhi13/live-wave-react.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0"
@@ -50,8 +71,7 @@
     "typescript": "^5.0.0",
     "vitest": "^1.0.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/livewave/react-sdk.git"
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
