@@ -5,11 +5,11 @@ Official React SDK for LiveWave real-time events and notifications platform.
 ## Installation
 
 ```bash
-npm install @livewave/react
+npm install livewave-react
 # or
-yarn add @livewave/react
+yarn add livewave-react
 # or
-pnpm add @livewave/react
+pnpm add livewave-react
 ```
 
 ## Quick Start
@@ -19,7 +19,7 @@ pnpm add @livewave/react
 Wrap your app with the `LiveWaveProvider`:
 
 ```tsx
-import { LiveWaveProvider } from '@livewave/react';
+import { LiveWaveProvider } from 'livewave-react';
 
 function App() {
   return (
@@ -38,7 +38,7 @@ function App() {
 ### 2. Subscribe to Channels
 
 ```tsx
-import { useChannel, useEvent } from '@livewave/react';
+import { useChannel, useEvent } from 'livewave-react';
 
 function ChatRoom({ roomId }) {
   const channel = useChannel(`chat-room.${roomId}`);
@@ -54,7 +54,7 @@ function ChatRoom({ roomId }) {
 ### 3. Use Presence Channels
 
 ```tsx
-import { usePresenceChannel } from '@livewave/react';
+import { usePresenceChannel } from 'livewave-react';
 
 function OnlineUsers({ roomId }) {
   const { members, me, subscribe, unsubscribe } = usePresenceChannel(
@@ -80,7 +80,7 @@ function OnlineUsers({ roomId }) {
 ### 4. Handle Notifications
 
 ```tsx
-import { useNotifications } from '@livewave/react';
+import { useNotifications } from 'livewave-react';
 
 function NotificationBell() {
   const { notifications, unreadCount, markAsRead, markAllAsRead } = useNotifications();
@@ -194,7 +194,7 @@ const {
 Display toast notifications automatically.
 
 ```tsx
-import { NotificationToast } from '@livewave/react';
+import { NotificationToast } from 'livewave-react';
 
 function App() {
   return (
@@ -215,7 +215,7 @@ function App() {
 Display the connection status.
 
 ```tsx
-import { ConnectionStatus } from '@livewave/react';
+import { ConnectionStatus } from 'livewave-react';
 
 <ConnectionStatus 
   showWhenConnected={true}
@@ -279,7 +279,7 @@ function ConnectionManager() {
 ### Event Batching
 
 ```tsx
-import { useEventBatch } from '@livewave/react';
+import { useEventBatch } from 'livewave-react';
 
 function Dashboard() {
   const events = useEventBatch(channel, ['event1', 'event2', 'event3'], {

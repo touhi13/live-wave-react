@@ -1,5 +1,5 @@
 {
-  "name": "@livewave/react",
+  "name": "livewave-react",
   "version": "1.0.0",
   "description": "Official React SDK for LiveWave real-time events and notifications platform",
   "main": "dist/index.js",
@@ -50,9 +50,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/touhi13/live-wave-react.git"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "peerDependencies": {
     "react": ">=17.0.0",
